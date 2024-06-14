@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (counter === 1) {
           if (souseCounter === 1) {
             freeSauceAdded = false;
-            initialPrice -= 0; // No price change
+            initialPrice -= 0;
           } else {
             initialPrice -= 60;
             totalPrice.textContent = `${initialPrice} ₽`;
