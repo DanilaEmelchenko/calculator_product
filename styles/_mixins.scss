@@ -1,0 +1,64 @@
+@mixin flex(
+  $gap: null,
+  $justify-content: null,
+  $flex-direction: null,
+  $align-items: null
+) {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-box;
+  display: -ms-flex;
+  display: -o-flex;
+
+  @if $gap != null {
+    gap: $gap;
+  }
+
+  @if $justify-content != null {
+    @if $justify-content == 'flex-start' {
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+    } @else if $justify-content == 'flex-end' {
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+    } @else if $justify-content == 'space-between' {
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+    } @else if $justify-content == 'center' {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+    } @else if $justify-content == 'space-around' {
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+    } @else {
+      justify-content: $justify-content;
+    }
+
+    -webkit-justify-content: $justify-content;
+    justify-content: $justify-content;
+  }
+
+  @if $flex-direction != null {
+    @if $flex-direction == 'column' {
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+    } @else {
+      -webkit-box-orient: horizontal;
+      -moz-box-orient: horizontal;
+    }
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-flex-direction: $flex-direction;
+    -ms-flex-direction: $flex-direction;
+    flex-direction: $flex-direction;
+  }
+
+  @if $align-items != null {
+    align-items: $align-items;
+    -webkit-box-align: $align-items;
+    -webkit-align-items: $align-items;
+    -ms-flex-align: $align-items;
+  }
+}

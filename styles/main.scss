@@ -1,0 +1,137 @@
+@import "./reset";
+@import "./variables";
+@import "./mixins.scss";
+
+.container {
+  margin: 0 auto;
+  padding: 32px 32px 0;
+  max-width: 933px;
+}
+
+.wrapper {
+  @include flex(32px, space-between, null);
+}
+
+// Левая часть
+.left-panel {
+  @include flex(32px, null, column);
+}
+
+.left-panel__info {
+  @include flex(12px, null, column);
+}
+
+.left-panel__title {
+  font-size: $fz-standart;
+}
+
+.left-panel__nutritional {
+  @include flex(null, space-between, null);
+  color: $color-grey;
+  font-size: $fz-standart;
+  flex-wrap: no;
+}
+
+// Правая часть
+.right-panel {
+  width: 100%;
+}
+
+.right-panel__header {
+  margin-bottom: 24px;
+}
+
+.right-panel__title {
+  font-family: "Manrope-Bold", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.right-panel__weight {
+  color: $color-grey;
+  font-size: $fz-standart;
+}
+
+.right-panel__horizontal {
+  margin-bottom: 24px;
+  border-radius: 100px;
+  border: 1px solid #e6e6e6;
+  width: 100%;
+}
+
+.right-panel__items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.right-panel__item-heading {
+  @include flex(null, space-between, null);
+  margin-bottom: 12px;
+}
+
+.right-panel__item-title {
+  font-size: $fz-standart;
+  font-family: "Manrope-Bold", sans-serif;
+  font-weight: 700;
+}
+
+.right-panel__item {
+  @include flex(null, space-between, null, center);
+  border-radius: 5px;
+  padding: 8px 12px;
+  height: 49px;
+  background-color: #f6f7f8;
+}
+
+.right-panel__item-choice-name {
+  font-size: $fz-standart;
+}
+
+.right-panel__item-quantity {
+  @include flex(8px, null, null, center);
+}
+
+.right-panel__item-quantity-value {
+  font-size: $fz-standart;
+  font-family: "Manrope-Medium", sans-serif;
+}
+
+.right-panel__item-quantity-decrease,
+.right-panel__item-quantity-increase {
+  background-color: $color-grey-light;
+  cursor: pointer;
+}
+
+.right-panel__item-details,
+.right-panel__item-choice-price {
+  color: $color-grey;
+}
+
+.right-panel__total {
+  @include flex(null, space-between, null, center);
+  margin-top: 65px;
+}
+
+.right-panel__total-price {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Manrope-Bold", sans-serif;
+}
+
+.right-panel__total-add {
+  font-family: "Manrope-Medium", sans-serif;
+  border-radius: 100px;
+  padding: 20px 24px;
+  width: 176px;
+  height: 65px;
+  background-color: #de341d;
+  font-size: $fz-standart;
+  color: #fff;
+  cursor: pointer;
+}
+
+.right-panel__total-add:hover {
+  background-color: #e51919;
+}
